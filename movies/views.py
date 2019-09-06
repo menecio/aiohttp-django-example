@@ -27,7 +27,11 @@ class MoviesDetailView(MovieAbstractView, web.View):
     model = 'movies.Movie'
 
     async def get(self):
-        pk = self.request.match_info['pk']
+        try:
+            pk = int(self.request.match_info['pk'])
+        except ValueError:
+            pk = None
+
         queryset = await self.get_queryset(pk=pk)
         movie = queryset.values().first()
 
