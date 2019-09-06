@@ -1,22 +1,20 @@
 import json
 
 from aiohttp import web
-from django.apps import apps
 from django.core.serializers import serialize
 from django.core.serializers.json import DjangoJSONEncoder
 
-from mymoviedb.utils import database_sync_to_async
+from mymoviedb import views
 
 routes = web.RouteTableDef()
 
 
-@routes.view('/movies')
-class MoviesListView(web.View):
+class MovieAbstractView(views.ModelMixin):
     model = 'movies.Movie'
 
-    async def get_queryset(self):
-        model = apps.get_model(self.model)
-        return await database_sync_to_async(model.objects.all)()
+
+@routes.view('/movies')
+class MoviesListView(MovieAbstractView, web.View):
 
     async def get(self):
         queryset = await self.get_queryset()
@@ -25,12 +23,8 @@ class MoviesListView(web.View):
 
 
 @routes.view('/movies/{pk}')
-class MoviesDetailView(web.View):
+class MoviesDetailView(MovieAbstractView, web.View):
     model = 'movies.Movie'
-
-    async def get_queryset(self, **kwargs):
-        model = apps.get_model(self.model)
-        return await database_sync_to_async(model.objects.filter)(**kwargs)
 
     async def get(self):
         pk = self.request.match_info['pk']
