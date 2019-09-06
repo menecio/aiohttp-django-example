@@ -24,7 +24,6 @@ class MoviesListView(MovieAbstractView, web.View):
 
 @routes.view('/movies/{pk}')
 class MoviesDetailView(MovieAbstractView, web.View):
-    model = 'movies.Movie'
 
     async def get(self):
         try:
