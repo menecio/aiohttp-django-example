@@ -22,7 +22,7 @@ async def setup_django(app):
 
 app = web.Application()
 app.on_startup.append(setup_django)
-app.add_subapp('/movies/', movies_app)
+app.add_subapp('/api/', movies_app)
 
 if __name__ == '__main__':
     web.run_app(app)
