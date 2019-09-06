@@ -1,0 +1,4 @@
+django~=2.2
+aiohttp~=3.5
+asgiref~=3.2
+psycopg2-binary~=2.8

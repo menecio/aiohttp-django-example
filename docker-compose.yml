@@ -1,0 +1,42 @@
+version: '3.6'
+
+services:
+  db:
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: mymoviedb
+      POSTGRES_PASSWORD: mymoviedb
+      POSTGRES_DB: mymoviedb
+    command: -c fsync=off
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+    image: mymoviedb:latest
+    entrypoint: python
+    command: manage.py runserver 0.0.0.0:8000
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app/mymoviedb
+    depends_on:
+      - db
+
+  api:
+    image: mymoviedb:latest
+    environment:
+      DJANGO_SETTINGS_MODULE: 'mymoviedb.settings'
+    entrypoint: python
+    command: aio-server.py
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/app/mymoviedb
+    depends_on:
+      - app
+      - db
+
+volumes:
+  pgdata:

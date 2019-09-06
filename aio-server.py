@@ -1,23 +1,15 @@
-import os
-
 from aiohttp import web
 from django import setup
 from django.conf import settings
 
-from mymoviedb.settings import BASE_DIR
+from mymoviedb import settings as my_settings  # not the same as django.conf.settings
 from movies.routes import movies_app
 
 
 async def setup_django(app):
     settings.configure(
-        DATABASES={
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-            }
-        },
-        INSTALLED_APPS=['movies']
-    )
+        INSTALLED_APPS=my_settings.INSTALLED_APPS,
+        DATABASES=my_settings.DATABASES)
     setup()
 
 app = web.Application()
