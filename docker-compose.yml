@@ -15,8 +15,8 @@ services:
     build:
       context: .
     image: mymoviedb:latest
-    entrypoint: python
-    command: manage.py runserver 0.0.0.0:8000
+    entrypoint: gunicorn
+    command: --reload --workers=5 --threads=2 --max-requests 1000 --bind 0.0.0.0:8000 mymoviedb.wsgi
     ports:
       - 8000:8000
     volumes:
