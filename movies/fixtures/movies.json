@@ -1,0 +1,134 @@
+[
+{
+  "model": "movies.movie",
+  "pk": 1,
+  "fields": {
+    "release_date": "1999-03-31",
+    "title": "The Matrix",
+    "rating": 87,
+    "duration": "02:19:00",
+    "director": "Lana Wachoski",
+    "genre": "Action,Sci-fi"
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 2,
+  "fields": {
+    "release_date": "1994-10-14",
+    "title": "The Shawshank Redemption",
+    "rating": 93,
+    "duration": "02:22:00",
+    "director": "Frank Darabont",
+    "genre": "Drama"
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 3,
+  "fields": {
+    "release_date": "1972-03-24",
+    "title": "The Godfather",
+    "rating": 92,
+    "duration": "02:55:00",
+    "director": "Francis Ford Coppola",
+    "genre": "Crime,Drama"
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 4,
+  "fields": {
+    "release_date": "1974-12-20",
+    "title": "The Godfather: Part II",
+    "rating": 90,
+    "duration": "03:22:00",
+    "director": "Francis Ford Coppola",
+    "genre": "Crime,Drama"
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 5,
+  "fields": {
+    "release_date": "2008-07-18",
+    "title": "The Dark Knight",
+    "rating": 90,
+    "duration": "02:32:00",
+    "director": "Christopher Nolan",
+    "genre": "Action, Crime"
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 6,
+  "fields": {
+    "release_date": "1957-04-10",
+    "title": "12 Angry Men",
+    "rating": 89,
+    "duration": "01:36:00",
+    "director": "Sidney Lumet",
+    "genre": "Drama"
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 7,
+  "fields": {
+    "release_date": "1994-02-04",
+    "title": "Schindler's List",
+    "rating": 89,
+    "duration": "03:15:00",
+    "director": "Steven Spielberg",
+    "genre": "Drama, History"
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 8,
+  "fields": {
+    "release_date": "2003-12-17",
+    "title": "The Lord of the Rings: The Return of the King",
+    "rating": 89,
+    "duration": "03:21:00",
+    "director": "Peter Jackson",
+    "genre": "Adventure"
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 9,
+  "fields": {
+    "release_date": "1994-10-14",
+    "title": "Pulp Fiction",
+    "rating": 89,
+    "duration": "02:34:00",
+    "director": "Quentin Tarantino",
+    "genre": "Crime,Drama"
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 10,
+  "fields": {
+    "release_date": "1967-12-29",
+    "title": "The Good, the Bad and the Ugly",
+    "rating": 88,
+    "duration": "02:58:00",
+    "director": "Sergio Leone",
+    "genre": "Western"
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 11,
+  "fields": {
+    "release_date": "1999-10-15",
+    "title": "Fight Club",
+    "rating": 88,
+    "duration": "02:19:00",
+    "director": "David Fincher",
+    "genre": "Drama"
+  }
+}
+]
