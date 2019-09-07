@@ -22,6 +22,11 @@ and to create a superuser if you want access to `/admin/`:
 docker-compose run --rm --entrypoint python app manage.py createsuperuser
 ```
 
+You can load some sample movies:
+```
+docker-compose run --rm --entrypoint python app manage.py loaddata movies.json
+```
+
 ## :thought_balloon: Discussion
 If you have questions or suggestions, please open an issue (just keep it civilized, please).
 
